@@ -1,4 +1,16 @@
 1. MODULES
   1.1 Search and Display
+    search field to look up for artists songs
+    display div to show search results
+    player to play the selected result
+    OPTIONAL
+    info field to show artist info, discography etc
+    if the user is loged in we can display his favourites directly on the main page
   1.2 User Login and Signup
+    we can try to use facebook, google login
+    and give option for email signup form
+    use coockies to remember user and auto log in 
   1.3 User profile
+    Save favourite songs
+    Arrange in playlists
+    Share on facebook, google+ ...
