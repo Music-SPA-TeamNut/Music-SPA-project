@@ -2,8 +2,18 @@
 OK
 
 2. Implement OOP design - Application logic using objects, modules and data hiding; Use ES2015 classes and mixins; Both Prototypal and classical inheritances are Ok; At least 3 modules; At least 7 types (classes) of objects
-Modules: Search and display; Login; User profile
-Classes(objects): User; 
+Modules: 
+  1.Search and display
+  2.Login and Signup
+  3.User profile
+Classes(objects): 
+  1.User
+  2.Search result?
+  3.Track
+  4.Playlist
+  5.?
+  6.?
+  7.?
 
 3.Unit tests - Using Mocha, Chai and SinonJSsd
 !!!
