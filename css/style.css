@@ -1,0 +1,42 @@
+/* HEADER BEGINS */
+header {
+    background-color: #1B1B1B;
+    height: 30%;
+    width: 100%;
+    padding: 15px;
+}
+header ul li {
+    display: inline;
+    color: white;
+    padding: 15px;
+    margin: 165px;
+}
+header ul li a {
+    text-decoration: none;
+    color: white;
+}
+/* HEADER ENDS */
+
+
+/* CONTENT BEGINS */
+#main {
+    border: 1px solid red;
+}
+#results {
+    border: 1px solid red;
+}
+/* CONTENT ENDS */
+
+
+/* FOOTER BEGINS */
+footer {
+    height: 20%;
+    color: white;
+    background-color: #1B1B1B;
+    width: 100%;
+    padding: 15px;
+}
+footer span {
+    float: right;
+}
+/* FOOTER ENDS */
