@@ -1,30 +1,31 @@
 1. Use jQuery
+OK
 
-2. Implement OOP design
-(Application logic using objects, modules and data hiding; Use ES2015 classes and mixins; Both Prototypal and classical inheritances are Ok
-At least 3 modules
-At least 7 types (classes) of objects)
+2. Implement OOP design - Application logic using objects, modules and data hiding; Use ES2015 classes and mixins; Both Prototypal and classical inheritances are Ok; At least 3 modules; At least 7 types (classes) of objects
+Modules: Search and display; Login; User profile
+Classes(objects): User; 
 
-Unit tests - Using Mocha, Chai and SinonJSsd
+3.Unit tests - Using Mocha, Chai and SinonJSsd
+!!!
 
-Implement a UI for your application
-Use KendoUI, jQueryUI or implement your own UI logic
-Use some kind of web data storage, one of the following is Ok
-Your backend with Node.js, PHP, ASP.NET, Django, Ruby on Rails, Spring, etc...
-Telerik Backend Services
-Firebase
-Microsoft Mobile App Services
-Use some kind of local storage, one of the following is Ok:
-localStorage
-sessionStorage
-Use Twitter Bootstrap
-Research and use Bootstrap for your application
-Make the application responsive for different screens and resolutions
-At least one third-party API to share something from your application
-Samples:
-Share status to Facebook, Google+, Twitter, etc...
-Upload images to Facebook, Flickr, Instagram
-The application must work in the latest versions of the browsers: Google Chrome, Mozilla Firefox, MS Edge, Internet Explorer 10/11, Opera and Apple Safari
+4.Implement a UI for your application - Use KendoUI, jQueryUI or implement your own UI logic
+We can try KendoUI
+
+5.Use some kind of web data storage, one of the following is Ok - Your backend with Node.js, PHP, ASP.NET, Django, Ruby on Rails, Spring, etc... Telerik Backend Services, Firebase, Microsoft Mobile App Services
+
+6. Use some kind of local storage, one of the following is Ok- localStorage, sessionStorage
+We can try to use coockies to remember user and login automatically when visiting the App
+
+7. Use Twitter Bootstrap - Research and use Bootstrap for your application. Make the application responsive for different screens and resolutions
+OK. We need to make the design responsive
+
+8. At least one third-party API to share something from your application - Share status to Facebook, Google+, Twitter, etc...Upload images to Facebook, Flickr, Instagram
+
+
+9. The application must work in the latest versions of the browsers: Google Chrome, Mozilla Firefox, MS Edge, Internet Explorer 10/11, Opera and Apple Safari
+
+
+
 Additional Requirements
 
 Follow the best practices for producing high-quality code:
