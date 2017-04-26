@@ -43,15 +43,15 @@
         <div class="container">
             <h2 id="header">Welcome, below you can search for you favorite song or artist!</h2>
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <input id="search-field" type="text" class="form-control" placeholder="Search">
                 <div class="input-group-btn">
-                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                    <button id="search-btn" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
                 </div>
             </div>
             <p>SOME TEXT HERE MAYBE ? </p>
         </div>
     </div>
-    <div class="container">
+    <div id="container" class="container">
         <div class="row">
             <div class="col-md-4">
                 <h2 class="centered-text">NAME</h2>
@@ -85,7 +85,12 @@
     <footer>
         <p><span class="left">© 2017 developed for Telerik Academy for educational purposes only</span><span class="right">Developed by: name1, name2, name3</span></p>      
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+    </script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/controllers/search.js"></script>
 </body>
 </html>
