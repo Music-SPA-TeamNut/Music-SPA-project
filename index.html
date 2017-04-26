@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <title>Music-SPA</title>
     <link rel="stylesheet" href="./css/style.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/signup.css">
 </head>
+
 <body>
     <!-- NAVIGATION STARS -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -30,7 +33,9 @@
                         <input type="password" placeholder="Password" class="form-control">
                     </div>
                     <button type="submit" class="btn btn-success">Login</button>
-                    <button type="submit" class="btn btn-success">Register</button>
+                    <button id="register" type="submit" class="btn btn-success">
+                        <a id="register-content" href="#/register">Register</a>
+                    </button>
                     <!-- add id on login and register if you want to make them hide with css -->
                     <button type="submit" id="logout" class="btn btn-danger">Log out</button>
                 </form>
@@ -47,6 +52,34 @@
                 <div class="input-group-btn">
                     <button id="search-btn" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
                 </div>
+            </div>
+            <div id="main-div" class="background">
+                <form class="main-content">
+                    <div class="container">
+                        <label><b class='label'>Email:</b></label>
+                        <input class="reg-form-input" type="txt" placeholder="Enter Email" name="email" required>
+
+                        <label><b class='label'>Username:</b></label>
+                        <input class="reg-form-input" type="txt" placeholder="Enter Username" name="username" required>
+
+                        <label><b class='label'>Password:</b></label>
+                        <input class="reg-form-input" type="pass" placeholder="Enter Password" name="psw" required>
+
+                        <label><b class='label'>Repeat Password:</b></label>
+                        <input class="reg-form-input" type="pass" placeholder="Repeat Password" name="psw-repeat" required>
+
+                        <input type="checkbox" checked="checked">
+                        <p class='remember-me'>Remember me</p>
+                        </br>
+                        <input type="checkbox">
+                        <p class='terms-agreement-message'>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+                        <div class="clearfix">
+                            <button type="button" class="cancelbtn btn-imprt">CANCEL</button>
+                            <button type="submit" class="signupbtn btn-imprt">SIGN UP</button>
+                        </div>
+                    </div>
+                </form>
             </div>
             <p>SOME TEXT HERE MAYBE ? </p>
         </div>
@@ -83,14 +116,13 @@
         </div>
     </div>
     <footer>
-        <p><span class="left">© 2017 developed for Telerik Academy for educational purposes only</span><span class="right">Developed by: name1, name2, name3</span></p>      
+        <p><span class="left">© 2017 developed for Telerik Academy for educational purposes only</span><span class="right">Developed by: name1, name2, name3</span></p>
     </footer>
-    <script
-        src="https://code.jquery.com/jquery-3.2.1.js"
-        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous">
     </script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/controllers/search.js"></script>
+    <script src="js/registration/sign-up-form.js"></script>
 </body>
+
 </html>
