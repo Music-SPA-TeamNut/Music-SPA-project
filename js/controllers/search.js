@@ -1,5 +1,8 @@
 (function(){
     $('#search-btn').click(function() {
+        if ($('#search-field').val() === '') {
+            return;
+        }
         const searchTerm = $('#search-field').val();
         const url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + searchTerm + '&type=video&videoCategoryId=10&key=AIzaSyB7EMVgOaBihxou_GLXdcZcCWSWbVg8NJ0'
         $.getJSON(url, function(data){
@@ -20,6 +23,9 @@
 
 (function() {
     $('#search-field').keypress(function(e) {
+        if ($('#search-field').val() === '') {
+            return;
+        }
         if (e.keyCode == 13) {
             const searchTerm = $('#search-field').val();
         const url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + searchTerm + '&type=video&videoCategoryId=10&key=AIzaSyB7EMVgOaBihxou_GLXdcZcCWSWbVg8NJ0'
