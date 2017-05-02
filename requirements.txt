@@ -1,46 +1,46 @@
 1. Use jQuery
-OK
+OK       ++++++
 
 2. Implement OOP design - Application logic using objects, modules and data hiding; Use ES2015 classes and mixins; Both Prototypal and classical inheritances are Ok; At least 3 modules; At least 7 types (classes) of objects
 Modules: 
-  1.Search and display
-  2.Login and Signup
-  3.User profile
+  1.Search and display ++++
+  2.Login and Signup ------
+  3.User profile --------
 Classes(objects): 
-  1.User
-  2.Search result?
-  3.Track
-  4.Playlist
+  1.User ---------
+  2.Search result?  ++++++
+  3.Track   +++++++
+  4.Playlist --------
   5.?
   6.?
   7.?
 
-3.Unit tests - Using Mocha, Chai and SinonJSsd
+3.Unit tests - Using Mocha, Chai and SinonJSsd -----------
 !!!
 
 4.Implement a UI for your application - Use KendoUI, jQueryUI or implement your own UI logic
 We can try KendoUI - http://demos.telerik.com/kendo-ui
-or if we use jQuery anyway we can try - http://jqueryui.com/
+or if we use jQuery anyway we can try - http://jqueryui.com/   --------
 
 5.Use some kind of web data storage, one of the following is Ok - Your backend with Node.js, PHP, ASP.NET, Django, Ruby on Rails, Spring, etc... Telerik Backend Services, Firebase, Microsoft Mobile App Services
-We can use Heroku with PostgreSQL or MongoDB
+We can use Heroku with PostgreSQL or MongoDB ---------
 
-6. Use some kind of local storage, one of the following is Ok- localStorage, sessionStorage
+6. Use some kind of local storage, one of the following is Ok- localStorage, sessionStorage   +++++++
 We can try to use coockies to remember user and login automatically when visiting the App and load their favourites/playlists
 
-7. Use Twitter Bootstrap - Research and use Bootstrap for your application. Make the application responsive for different screens and resolutions
+7. Use Twitter Bootstrap - Research and use Bootstrap for your application. Make the application responsive for different screens and resolutions +++++
 OK. We need to make the design responsive for smaller screens and devices
 
 8. At least one third-party API to share something from your application - Share status to Facebook, Google+, Twitter, etc...Upload images to Facebook, Flickr, Instagram
 We can use:
-Youtube API to search for music/artists - https://developers.google.com/youtube/
+Youtube API to search for music/artists - https://developers.google.com/youtube/ ++++++++++++
 Facebook API to share favourits - https://developers.facebook.com/docs/plugins/share-button
 If we have time we can add artists info and functionality from:
 discogs - https://www.discogs.com/developers/
 spotify - https://developer.spotify.com/spotify-echo-nest-api/
 lastFM - http://www.last.fm/api
 
-9. The application must work in the latest versions of the browsers: Google Chrome, Mozilla Firefox, MS Edge, Internet Explorer 10/11, Opera and Apple Safari
+9. The application must work in the latest versions of the browsers: Google Chrome, Mozilla Firefox, MS Edge, Internet Explorer 10/11, Opera and Apple Safari +++++
 OK
 
 
@@ -48,11 +48,11 @@ Additional Requirements
 
 Follow the best practices for producing high-quality code:
 
-Correct naming
-Data encapsulation
-Use OOP and modules
-Strong cohesion and loose coupling
-Use GIT as a source control system - Done
-Host it on https://github.com - Done
+Correct naming         +++++++
+Data encapsulation        -------
+Use OOP and modules       -----
+Strong cohesion and loose coupling     ----
+Use GIT as a source control system - Done    +++++++++
+Host it on https://github.com - Done      +++++++
 Deploy your application on a cloud server of your choice - Heroku, Firebase, Amazon S3, Microsoft Azure - Heroku
 Usage of a structural JavaScript framework is FORBIDDEN - OK

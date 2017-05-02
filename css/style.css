@@ -23,6 +23,14 @@ body {
 .centered-text {
     text-align: center;
 }
+#headline {
+    text-align: center;
+    padding: 25px;
+    margin: 25px;
+}
+div.col-md-4 p {
+    text-align: center;
+}
 /* CONTENT ENDS */
 
 
