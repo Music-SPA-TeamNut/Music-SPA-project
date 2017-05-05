@@ -7,30 +7,30 @@ import { checkButtons } from 'helpers';
 const router = new Navigo(null, false);
 
 $('body').on('click', '#search-btn', () => {
-    if($('#search-field').val() === '') {
+    if ($('#search-field').val() === '') {
         return;
     } else {
-        if(location.hash === '#/home/search') {
+        if (location.hash === '#/search') {
             searchController.searchTracks()
         } else {
-        router.navigate('search');
-        $('#search-field').val('')
+            router.navigate('search');
+            $('#search-field').val('')
         }
     }
 });
 
 $('body').on('keypress', '#search-field', (e) => {
-    if(e.keyCode === 13) {
-        if($('#search-field').val() === '') {
-        return;
-    } else {
-        if(location.hash === '#/home/search') {
-            searchController.searchTracks()
+    if (e.keyCode === 13) {
+        if ($('#search-field').val() === '') {
+            return;
         } else {
-        router.navigate('search');
-        $('#search-field').val('')
+            if (location.hash === '#/search') {
+                searchController.searchTracks()
+            } else {
+                router.navigate('search');
+                $('#search-field').val('')
+            }
         }
-    }
     }
 })
 
@@ -58,10 +58,10 @@ router
 //     .resolve();
 
 
-router.notFound(function () {
-//   TO DO
+router.notFound(function() {
+    //   TO DO
 });
-    
+
 // $(window).ready(function() {
 //     location.href = "/#/home";
 // });
