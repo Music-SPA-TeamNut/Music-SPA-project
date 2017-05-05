@@ -1,28 +1,24 @@
-System.config({
+SystemJS.config({
     transpiler: 'plugin-babel',
     map: {
-        // System.js files
-        'plugin-babel': 'libs/systemjs-plugin-babel/plugin-babel.js',
-        'systemjs-babel-build': 'libs/systemjs-plugin-babel/systemjs-babel-browser.js',
-        'text': 'libs/systemjs-plugin-text/text.js',
+        'plugin-babel': '../libs/systemjs-plugin-babel/plugin-babel.js',
+        'systemjs-babel-build': '../libs/systemjs-plugin-babel/systemjs-babel-browser.js',
 
-        // App files
-        'app': 'js/app.js',
-        'myRouter': 'js/myRouter.js',
-        'requester': 'js/requester.js',
-        'data': 'js/data.js',
-        'userController': 'js/controllers/user.js',
-        'templates': 'js/templates.js',
+        'main': '/js/app.js',
+        'router': '/libs/navigo/lib/navigo.js',
+        'requester': '/js/requester.js',
+        'templates': '/js/templates.js',
+        'data': '/js/data.js',
+        'searchController': '/js/controllers/search.js',
+        'userController': '/js/controllers/user.js',
+        'encryptor': '/js/encryptor.js',
+        'helpers': '/js/helpers.js',
 
-        // templates
-        // 'homeTemplate': 'templates/home.handlebars',
-
-        // Library files
-        'jquery': 'libs/jquery/dist/jquery.min.js',
-        'handlebars': 'libs/handlebars/dist/handlebars.amd.js',
-        'cryptojs': 'libs/cryptojs/cryptojs.js',
-        'toastr': 'libs/toastr/build/toastr.min.js',
+        'jquery': '../libs/jquery/dist/jquery.js',
+        'bootstrap': '../libs/bootstrap/dist/js/bootstrap.min.js',
+        // 'handlebars': '../libs/handlebars/dist/',
+        
     }
-});
+})
 
-System.import('app');
+System.import('main');

@@ -1,14 +1,13 @@
-import { get as getRequest } from 'requester';
-// import { Handlebars } from 'handlebars'; // FIX ME
+import { get as getTemplate } from 'requester';
 
 const cacheObj = {};
 
-export function load(templateName) {
+export function loadTemplate(templateName) {
   if(cacheObj.hasOwnProperty(templateName)) {
     return Promise.resolve(cacheObj[templateName]);
   }
 
-  return getRequest(`templates/${templateName}.handlebars`)
+  return getTemplate(`templates/${templateName}.handlebars`)
     .then(template => {
       const compiledTemplate = Handlebars.compile(template);
       cacheObj[templateName] = compiledTemplate;

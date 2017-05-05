@@ -1,15 +1,28 @@
 import * as data from 'data';
-import { load as loadTemplate } from 'templates';
+import { loadTemplate } from 'templates';
+import encryptor from 'encryptor';
 
 export function login() {
 
     const username = $('#username-login').val();
     const password = $('#password-login').val();
+    const passHash = encryptor.encrypt(password);
 
-    data.login(username, password)
-        .then(result => {
-            localStorage.authKey = result.authKey;
-        });
+    data.login(username, passHash)
+        .then((result) => {
+            console.log(result);
+            localStorage.setItem('authKey', result.result.authKey)
+            localStorage.setItem('btn-logout', 'true');
+            localStorage.setItem('username', result.result.username)
+            $('#btn-login').addClass('hidden');
+            $('#btn-register').addClass('hidden');
+            $('#btn-logout').removeClass('hidden');
+            $('#username-login').addClass('hidden');
+            $('#password-login').addClass('hidden');
+            location.hash = '#/home';
+            alert('Successfully logged in!');
+        },
+        errorMsg => alert(errorMsg.responseText));
 }
 
 export function showRegisterForm() {
@@ -31,31 +44,39 @@ export function signUp() {
     const username = $("#username-value").val()
         // TODO: repeat password function
     const password = $('#password-value').val();
+    const passHash = encryptor.encrypt(password);
 
-    data.register(email, username, password)
+    data.register(email, username, passHash)
         .then(result => {
             console.log(result);
-        });
+            login(username, passHash);
+            cancelRegistration();
+        },
+        // errorMsg => alert(errorMsg.responseText)
+        );
 }
 
-export function register() {
-    const username = $('#input-username').val();
-    const password = $('#input-password').val();
-    const passHash = password; // HASH ME
+// export function register() {
+//     const username = $('#input-username').val();
+//     const password = $('#input-password').val();
+//     const passHash = encryptor.encrypt(password);
 
-    data.register(username, passHash)
-        .then(
-            result => {
-                toastr.success(`User ${username} registered successfully`);
-                login()
-            },
-            errorMsg => toastr.error(errorMsg));
-}
+//     data.register(username, passHash)
+//         .then(
+//             result => {
+//                 toastr.success(`User ${username} registered successfully`);
+//                 login()
+//             },
+//             errorMsg => toastr.error(errorMsg));
+// }
 
 export function logout() {
-    localStorage.removeItem(LOCALSTORAGE_AUTH_KEY_NAME);
-    $('#auth-btn').removeClass('hidden');
-    $('#signout-btn').addClass('hidden');
-    //toastr.success('Logged out');
-    location.href = '#/home';
+    localStorage.clear();
+    $('#btn-login').removeClass('hidden');
+    $('#btn-register').removeClass('hidden');
+    $('#btn-logout').addClass('hidden');
+    $('#username-login').removeClass('hidden');
+    $('#password-login').removeClass('hidden');
+    alert('Successfully logged out');
+    location.hash = '#/home';
 }

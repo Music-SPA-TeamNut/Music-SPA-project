@@ -1,0 +1,7 @@
+{{#each items}}
+    <a href="#/tracks/{{item.id.videoId}}">
+        <h3 class="result-title">{{snippet.title}}</h3>
+        <p class="result-description">{{snippet.title}}</p>
+        <img class="result-image" src="{{snippet.thumbnails.medium.url}}">
+    </a>
+{{/each}}

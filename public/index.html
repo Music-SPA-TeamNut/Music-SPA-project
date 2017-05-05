@@ -32,14 +32,10 @@
                     <div class="form-group">
                         <input id="password-login" type="password" placeholder="Password" class="form-control">
                     </div>
-                    <button type="submit" class="btn btn-success">
-                        <a id="register-content" href="#/login">Login</a>
-                    </button>
-                    <button id="register" type="submit" class="btn btn-success">
-                        <a id="register-content" href="#/registration">Register</a>
-                    </button>
+                    <a type="submit" id="btn-login" class="btn btn-success" href="#/login">Login</a>
+                    <a id="btn-register" type="submit" class="btn btn-success" href="#/registration">Register</a>
                     <!-- add id on login and register if you want to make them hide with css -->
-                    <button type="submit" id="logout" class="btn btn-danger">Log out</button>
+                    <a type="submit" id="btn-logout" class="btn btn-danger hidden" href="#/logout">Log out</a>
                 </form>
             </div>
         </div>
@@ -90,6 +86,8 @@
         </div>
     </div>
     <div id="container" class="container">
+    </div>
+    <footer>
         <div class="row">
             <h1 id="headline">Developed by:</h1>
             <div class="col-md-4">
@@ -111,17 +109,18 @@
                 <p>VGITHUB HERE</p>
             </div>
         </div>
-    </div>
-    <footer>
         <p><span class="left">© 2017 developed for Telerik Academy for educational purposes only</span><span class="right"></span></p>
     </footer>
-
-    <script src="libs/systemjs/dist/system.js"></script>
-    <script src="js/system-config.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/controllers/search.js"></script>
-    <script src="js/register/sign-up-form.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+    </script>
+    <script src="./libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./libs/navigo/lib/navigo.min.js"></script>
+    <script src="./libs/handlebars/dist/handlebars.js"></script>
+    <script src="./libs/systemjs/dist/system.js"></script>
+    <script src="./js/system-config.js"></script>
 </body>
 
 </html>
