@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "email": "kokos@abv.bg",
+      "username": "kokos",
+      "passHash": "kokos123",
+      "usernameToLower": "kokos",
+      "id": "0olqasjew0veymcx1dcxr",
+      "authKey": "0olqasjew0veymcx1dcxrNeMUhAUITwtkdByZtayjiYwgkXJmbGDbLePaMCN"
+    },
+    {
+      "email": "ne@abv.bg",
+      "username": "ne",
+      "passHash": "ne123",
+      "usernameToLower": "ne",
+      "id": "0reec0pk71c4zov24bzkt9",
+      "authKey": "0reec0pk71c4zov24bzkt9FKOhxtMqEBdVzfSTSfdWsOzYRyuUwTXgkGnPNS"
+    },
+    {
+      "email": "neshto@abv.bg",
+      "username": "neshto",
+      "passHash": "nehsto",
+      "usernameToLower": "neshto",
+      "id": "0r6zu9ji0gcjc98jda38fr",
+      "authKey": "0r6zu9ji0gcjc98jda38frPlNmsqYMdggDzzmZOtNowneNNrLbEvRdzqCnPk"
+    },
+    {
+      "email": "batman@gmail.com",
+      "username": "b-boy",
+      "passHash": "spiderman",
+      "usernameToLower": "b-boy",
+      "id": "0ecu0djsj3tiwmhadcxr",
+      "authKey": "0ecu0djsj3tiwmhadcxrBgddXLONNRJawguDYrVSwxwgGZLRNknvcfXIoGaJ",
+      "songList": []
+    }
+  ]
+}
