@@ -1,0 +1,165 @@
+/* Full-width input fields */
+
+input[type=txt],
+input[type=pass] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid dimgray;
+    box-sizing: border-box;
+    background-color: gray;
+}
+
+input[type=txt]::-webkit-input-placeholder,
+input[type=pass]::-webkit-input-placeholder {
+    color: darkslategray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: oblique;
+}
+
+input[type=txt]:hover,
+input[type=pass]:hover {
+    border: 1px solid darkgray;
+    background-color: darkgray;
+}
+
+
+/* Set a style for all buttons */
+
+.btn-imprt {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* Extra styles for the cancel button */
+
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.label,
+.terms-agreement-message,
+.remember-me {
+    color: darkgray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: oblique;
+}
+
+.remember-me {
+    display: inline;
+}
+
+.terms-agreement-message {
+    display: inline;
+}
+
+.label {
+    font-weight: normal;
+    color: darkgray;
+}
+
+
+/* Float cancel and signup buttons and add an equal width */
+
+.cancelbtn,
+.signupbtn {
+    float: left;
+    width: 50%;
+}
+
+#register-content {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Add padding to container elements */
+
+.container {
+    padding: 16px;
+}
+
+
+/* The Modal (background) */
+
+.background {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 10000000;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black w/ opacity */
+    padding-top: 50px;
+}
+
+
+/* Modal Content/Box */
+
+.main-content {
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.9);
+    margin: 5% auto 15% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+
+/* The Close Button (x) */
+
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    color: #000;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+
+/* Clear floats */
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+
+/* Change styles for cancel button and signup button on extra small screens */
+
+@media screen and (max-width: 300px) {
+    .cancelbtn,
+    .signupbtn {
+        width: 100%;
+    }
+}
