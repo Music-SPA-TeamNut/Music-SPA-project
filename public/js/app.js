@@ -38,14 +38,14 @@ $(document).ready(checkButtons());
 
 router
     .on({
-        'search': () => searchController.searchTracks(),
+        'search': function() {searchController.searchTracks()},
         // 'tracks': () => console.log('Tracks loaded'),
-        'registration': () => userController.showRegisterForm(),
-        'signup': () => userController.signUp(),
-        'cancel': () => userController.cancelRegistration(),
-        'login': () => userController.login(),
-        'logout': () => userController.logout(),
-        'home': () => $('#container').html(''),
+        'registration': function() {userController.showRegisterForm()},
+        'signup': function() {userController.signUp()},
+        'cancel': function() {userController.cancelRegistration()},
+        'login': function() {userController.login()},
+        'logout': function() {userController.logout()},
+        'home': function() {$('#container').html('')},
 //         '*': () => $('#container').html(''),
     })
     .resolve();
