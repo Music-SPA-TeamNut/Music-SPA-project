@@ -48,13 +48,16 @@ router
         'home': function() {$('#container').html('')},
 //         '*': () => $('#container').html(''),
     })
-    .resolve();
+    .resolve;
+
+
 
 
 router.notFound(function() {
     //   TO DO
 });
 
-// $(window).ready(function() {
-//     location.href = "/#/home";
-// });
+$(window).ready(function() {
+    location.href = "/#/home";
+    router.resolve();
+});
