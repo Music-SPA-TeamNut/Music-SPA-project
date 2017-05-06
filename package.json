@@ -4,9 +4,9 @@
   "description": "##  App description",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
-  "author": "Doncho Minkov (donchominkov@gmail.com)",
+  "author": "",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.13.3",
