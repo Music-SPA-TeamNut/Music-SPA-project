@@ -47,15 +47,17 @@ router
         'logout': function() {userController.logout()},
         'home': function() {$('#container').html('')},
 //         '*': () => $('#container').html(''),
-    });
+    })
+    .resolve;
 
-router.resolve();
+
 
 
 router.notFound(function() {
     //   TO DO
 });
 
-// $(window).ready(function() {
-//     location.href = "/#/home";
-// });
+$(window).ready(function() {
+    location.href = "/#/home";
+    router.resolve();
+});
