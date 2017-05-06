@@ -3,6 +3,7 @@ import 'jquery';
 import * as userController from 'userController';
 import * as searchController from 'searchController';
 import { checkButtons } from 'helpers';
+import * as trackController from 'trackController';
 
 const router = new Navigo(null, false);
 
@@ -39,7 +40,7 @@ $(document).ready(checkButtons());
 router
     .on({
         'search': function() {searchController.searchTracks()},
-        // 'tracks': () => console.log('Tracks loaded'),
+        'search/:id': (params) => trackController.loadTrack(params),
         'registration': function() {userController.showRegisterForm()},
         'signup': function() {userController.signUp()},
         'cancel': function() {userController.cancelRegistration()},

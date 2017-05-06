@@ -12,6 +12,7 @@ SystemJS.config({
         'searchController': '/js/controllers/search.js',
         'userController': '/js/controllers/user.js',
         'encryptor': '/js/encryptor.js',
+        'trackController': '/js/controllers/track.js',
         'helpers': '/js/helpers.js',
 
         'jquery': '../libs/jquery/dist/jquery.js',
