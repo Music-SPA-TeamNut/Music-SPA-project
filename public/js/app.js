@@ -45,8 +45,8 @@ router
         'cancel': () => userController.cancelRegistration(),
         'login': () => userController.login(),
         'logout': () => userController.logout(),
-        '': () => $('#container').html(''),
-        '*': () => $('#container').html(''),
+        'home': () => $('#container').html(''),
+//         '*': () => $('#container').html(''),
     })
     .resolve();
 
