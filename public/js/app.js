@@ -48,7 +48,7 @@ router
         'home': function() {$('#container').html('')},
 //         '*': () => $('#container').html(''),
     })
-    .resolve;
+    .resolve();
 
 
 
