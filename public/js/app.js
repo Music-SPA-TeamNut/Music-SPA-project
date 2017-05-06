@@ -47,8 +47,9 @@ router
         'logout': function() {userController.logout()},
         'home': function() {$('#container').html('')},
 //         '*': () => $('#container').html(''),
-    })
-    .resolve();
+    });
+
+router.resolve();
 
 
 router.notFound(function() {
