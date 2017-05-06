@@ -48,14 +48,7 @@ router
         '': () => $('#container').html(''),
         '*': () => $('#container').html(''),
     })
-    // .resolve();
-
-// router
-//     .on(() => $('#container').html(''))
-//     .resolve();
-// router
-//     .on('search', () => searchController.searchTracks())
-//     .resolve();
+    .resolve();
 
 
 router.notFound(function() {
