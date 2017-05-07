@@ -17,11 +17,12 @@ export function addToPlaylist(params) {
     const description = $element[0].children[1].innerText;
     const img = $element[0].children[2].currentSrc;
 
-    Promise.resolve(addTrack(id, title, description, img))
-        .then(result => {
-            console.log(result);
-            alert(`Track added to your playlist`)
-        })
+    // Promise.resolve(
+    addTrack(id, title, description, img)
+        // )
+        // .then(result => {
+        //     alert(result)
+        // })
 }
 
 export function removeFromPlaylist(params) {
@@ -37,6 +38,7 @@ export function showPlaylist() {
         loadTemplate('playlist'),
     ])
     .then(([tracks, template]) => {
+        console.log(tracks);
         $('#container').html(template(tracks))
     })
 }

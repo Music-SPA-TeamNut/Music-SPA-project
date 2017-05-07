@@ -14,6 +14,7 @@ module.exports = function(db) {
         return;
       }
       var songs = user.songList;
+    
       res.json({
         result: songs
       });
@@ -25,8 +26,18 @@ module.exports = function(db) {
           .json('Not authorized User');
         return;
       }
+
+      var id = req.body.id;
+
+      if(user.songList.find(function(dbSong) {
+        return dbSong.id === id;
+      })) {
+        res.status(201)
+          .json('This song is already in your playlist');
+          return;
+      }
       var song = {
-        id: req.body.id,
+        id,
         title: req.body.title,
         description: req.body.description,
         img: req.body.img
@@ -36,9 +47,7 @@ module.exports = function(db) {
       user.songList.push(song);
 
       res.status(201)
-        .json({
-          result: song
-        });
+        .json({message:'Song added to your playlist'});
     })
     .delete('/:id', function(req, res) {
       var user = req.user;

@@ -1,3 +1,5 @@
+
+
 export function checkButtons() {
     if(localStorage.getItem('btn-logout')) {
         $('#btn-login').addClass('hidden');
@@ -25,3 +27,8 @@ export function notFound() {
      $('#container').html(data);
  });
 }
+
+Handlebars.registerHelper('username', function() {
+    const username = localStorage.getItem('username');
+    return username;
+})

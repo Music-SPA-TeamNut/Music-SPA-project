@@ -73,7 +73,7 @@ export function logout() {
 export function addTrack(id, title, description, img) {
     const headervalue = localStorage.getItem('authKey');
     data.postTrack(headervalue, id, title, description, img)
-        .then(result => console.log(result),
+        .then(result => alert(result),
         errorMsg => alert(errorMsg.responseText));
 }
 

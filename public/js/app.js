@@ -45,8 +45,8 @@ router
         'search': function() {searchController.searchTracks()},
         'search/:id': (params) => trackController.loadTrack(params),
         'user/:username': () => trackController.showPlaylist(),
-        'user/:username/tracks': () => trackController.showPlaylist(),
-        'user/:username/tracks/:id': (params) => trackController.loadTrack(params),
+        'user/:username/playlist': () => trackController.showPlaylist(),
+        'user/:username/playlist/:id': (params) => trackController.loadTrack(params),
         'search/add-to-playlist/:id': (params) => trackController.addToPlaylist(params),
         'user/remove-from-playlist/:id': (params) => trackController.removeFromPlaylist(params),
         'registration': function() {userController.showRegisterForm()},
@@ -58,7 +58,8 @@ router
     })
     .resolve();
 
-router.notFound(() => notFound());
+router
+    .notFound(() => notFound());
 
 $(window).ready(function() {
     location.href = "/#/home";
