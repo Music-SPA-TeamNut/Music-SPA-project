@@ -47,7 +47,7 @@ module.exports = function(db) {
       user.songList.push(song);
 
       res.status(201)
-        .json({message:'Song added to your playlist'});
+        .json('Song added to your playlist');
     })
     .put('/:id', function(req, res) {
       var user = req.user;
