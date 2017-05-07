@@ -66,6 +66,8 @@ export function logout() {
     $('#btn-logout').addClass('hidden');
     $('#username-login').removeClass('hidden');
     $('#password-login').removeClass('hidden');
+    $('#profile-link').text('');
+    $('#profile-link').addClass('hidden');
     alert('Successfully logged out');
     location.hash = '#/home';
 }

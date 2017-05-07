@@ -23,7 +23,7 @@ module.exports = function(db) {
       var user = req.user;
       if (!user) {
         res.status(401)
-          .json('Not authorized User');
+          .json('You need to be logged in to add songs to your playlist :)');
         return;
       }
 
