@@ -10,19 +10,18 @@ export function loadTrack(params) {
 )};
 
 export function addToPlaylist(params) {
-    // if(){}
-    const id = params.id;
-    const $element = $('[href="#/search/'+ id + '"]');
-    const title = $element[0].children[0].innerText;
-    const description = $element[0].children[1].innerText;
-    const img = $element[0].children[2].currentSrc;
+    if(localStorage.getItem('username')){
+        const id = params.id;
+        const $element = $('[href="#/search/'+ id + '"]');
+        const title = $element[0].children[0].innerText;
+        const description = $element[0].children[1].innerText;
+        const img = $element[0].children[2].currentSrc;
 
-    // Promise.resolve(
-    addTrack(id, title, description, img)
-        // )
-        // .then(result => {
-        //     alert(result)
-        // })
+        addTrack(id, title, description, img)
+    } else {
+        alert('opaaa ... You need to be logged in to add songs to your playlist :)');
+        return;
+    }
 }
 
 export function removeFromPlaylist(params) {
