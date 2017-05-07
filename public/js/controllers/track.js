@@ -27,9 +27,13 @@ export function addToPlaylist(params) {
 
 export function removeFromPlaylist(params) {
     const id = params.id;
-    Promise.resolve(removeTrack(id))
-        .then(result =>
-            alert(result))
+    const user = localStorage.getItem('username');
+    // Promise.resolve(
+removeTrack(id);
+location.hash = '#/user/' + user + '/playlist'
+// )
+//         .then(result =>
+//             alert(result))
 }
 
 export function showPlaylist() {

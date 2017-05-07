@@ -49,14 +49,14 @@ module.exports = function(db) {
       res.status(201)
         .json({message:'Song added to your playlist'});
     })
-    .delete('/:id', function(req, res) {
+    .put('/:id', function(req, res) {
       var user = req.user;
       if (!user) {
         res.status(401)
           .json('Not authorized User');
         return;
       }
-      var id = +req.params.id;
+      var id = req.params.id;
       var index = user.songList.findIndex(function(dbSong) {
         return dbSong.id === id;
       });

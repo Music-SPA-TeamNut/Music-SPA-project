@@ -39,13 +39,13 @@ export function postTrack(headervalue, id, title, description, img) {
 }
 
 export function deleteTrack(headervalue, id) {
-    const body = {
-        id
-    }
+    // const body = {
+    //     id
+    // }
     const header = {
         'x-auth-key': headervalue
     }
-    return requester.delete('api/tracks', body, header)
+    return requester.remove('api/tracks/'+ id, header)
 }
 
 export function getTracks(headervalue) {
