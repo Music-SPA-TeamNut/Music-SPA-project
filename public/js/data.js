@@ -23,3 +23,35 @@ export function search(searchTerm) {
 
     return requester.get(url) 
 }
+
+export function postTrack(headervalue, id, title, description, img) {
+    const body = {
+        id,
+        title,
+        description,
+        img
+    }
+    const header = {
+        'x-auth-key': headervalue
+    }
+    
+    return requester.post('api/tracks', body, header)
+}
+
+export function deleteTrack(headervalue, id) {
+    const body = {
+        id
+    }
+    const header = {
+        'x-auth-key': headervalue
+    }
+    return requester.delete('api/tracks', body, header)
+}
+
+export function getTracks(headervalue) {
+    const header = {
+        'x-auth-key': headervalue
+    }
+
+    return requester.get('api/tracks', header);
+}

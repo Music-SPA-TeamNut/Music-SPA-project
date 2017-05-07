@@ -12,11 +12,13 @@ app.use(express.static('public'));
 app.use('/libs', express.static('node_modules'));
 
 var usersRouter = require('./routers/usersRouter')(db);
+var tracksRouter = require('./routers/tracksRouter')(db);
 var categoriesRouter = require('./routers/categoriesRouter')(db);
 
 require('./utils/authorized-user')(app, db);
 
 app.use('/api/users', usersRouter);
+app.use('/api/tracks', tracksRouter);
 app.use('/api/categories', categoriesRouter);
 
 var port = process.env.PORT || 3013;

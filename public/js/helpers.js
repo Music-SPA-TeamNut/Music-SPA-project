@@ -1,13 +1,3 @@
-export  function showForm() {
-            $('#modal-body').removeClass('hidden');
-            $('#modal-footer').removeClass('hidden')
-        }
-
-export function hideForm() {
-            $('#modal-body').addClass('hidden');
-            $('#modal-footer').addClass('hidden')
-        }
-
 export function checkButtons() {
     if(localStorage.getItem('btn-logout')) {
         $('#btn-login').addClass('hidden');
@@ -15,6 +5,9 @@ export function checkButtons() {
         $('#btn-logout').removeClass('hidden');
         $('#username-login').addClass('hidden');
         $('#password-login').addClass('hidden');
+        $('#profile-link').attr('href', '#/user/' + localStorage.getItem('username'));
+        $('#profile-link').text('Hello, ' + localStorage.getItem('username') + ' ');
+        $('#profile-link').removeClass('hidden');
     }
 }
 
@@ -25,4 +18,10 @@ export function getId(id) {
     } else {
         localStorage.setItem('todoState', 'false')
     }
+}
+
+export function notFound() {
+   $.get('templates/404.html', function(data) {
+     $('#container').html(data);
+ });
 }

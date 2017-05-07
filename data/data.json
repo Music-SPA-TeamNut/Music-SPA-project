@@ -70,15 +70,6 @@
       "id": "edfe9529-09ec-4519-8600-3e3190528c72"
     },
     {
-      "email": "petrov@trfstudio.com",
-      "username": "Daniel",
-      "passHash": "a6c35c7283652272aa933d35b84c2dd352680f5ec729c949218643ed53b98724",
-      "usernameLower": "daniel",
-      "authKey": "undefinedYt_JKLwEoj(gTg!H!qnZvhQRZWCQTxHN@Vv%@)YO+zW&@un-gsJ",
-      "songList": [],
-      "id": "d6b92efb-0a9c-4ecf-a5af-e66c3e5e8a59"
-    },
-    {
       "email": "lambrianayanakieva@gmail.com",
       "username": "lambriana",
       "passHash": "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5",
@@ -86,6 +77,52 @@
       "authKey": "undefinedUb#rgsi#ASOTiNN_XKQDxeGovPLR)%!Epud+%*w(ILl=W&twcSn",
       "songList": [],
       "id": "a92abd62-7ac8-4a18-ac44-88907032e3c7"
+    },
+    {
+      "email": "petrov@trfstudio.com",
+      "username": "Daniel",
+      "passHash": "a6c35c7283652272aa933d35b84c2dd352680f5ec729c949218643ed53b98724",
+      "usernameLower": "daniel",
+      "authKey": "undefined-hiO-zmhKYD*ges)EgzT_n@QymT$mN@a*BdYKLX-EXHcLOkZQVJ",
+      "songList": [
+        {
+          "id": "0Bz2NMIboUc",
+          "title": "Deep Mix Moscow - Iron Box @ Kitchen",
+          "description": "Very rare set of Deep Mix Moscow back from 2006 (good old times)",
+          "img": "https://i.ytimg.com/vi/0Bz2NMIboUc/mqdefault.jpg"
+        },
+        {
+          "id": "Ffht0ApbU24",
+          "title": "Roni Size - Reprazent",
+          "description": "",
+          "img": "https://i.ytimg.com/vi/Ffht0ApbU24/mqdefault.jpg"
+        },
+        {
+          "id": "bk6Xst6euQk",
+          "title": "Solomun Boiler Room Tulum DJ Set",
+          "description": "Download audio: http://blrrm.tv/br-app ▻More here: http://blrrm.tv/solomun ▻ Diynamic's head honcho took the floor for our second Tulum broadcast playing ...",
+          "img": "https://i.ytimg.com/vi/bk6Xst6euQk/mqdefault.jpg"
+        },
+        {
+          "id": "_QazRAjQ9GI",
+          "title": "Underworld - Barking (Full Album)",
+          "description": "\"Underworld - Always Loved A Film\", sound recording administered by: SME and [Merlin] Essential Music. \"Underworld - Moon In Water\", sound recording ...",
+          "img": "https://i.ytimg.com/vi/_QazRAjQ9GI/mqdefault.jpg"
+        },
+        {
+          "id": "jQI9IohmZb4",
+          "title": "Underworld - Beaucoup Fish (Extended Edition)",
+          "description": "This is the extended version of Underworld's 1999 album Beaucoup Fish which includes the extended mixes of Push Upstairs, Jumbo and Moaner as well as a ...",
+          "img": "https://i.ytimg.com/vi/jQI9IohmZb4/mqdefault.jpg"
+        },
+        {
+          "id": "wn_AQH2DCvM",
+          "title": "LAIKA - Sounds of the Satellites.wmv",
+          "description": "",
+          "img": "https://i.ytimg.com/vi/wn_AQH2DCvM/mqdefault.jpg"
+        }
+      ],
+      "id": "0ae9a48a-3680-494b-a9cc-a07170a60c63"
     }
   ]
 }

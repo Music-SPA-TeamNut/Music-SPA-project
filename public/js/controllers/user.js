@@ -2,8 +2,9 @@ import * as data from 'data';
 import { loadTemplate } from 'templates';
 import encryptor from 'encryptor';
 
-export function login() {
+const user = localStorage.getItem('username');
 
+export function login() {
     const username = $('#username-login').val();
     const password = $('#password-login').val();
     const passHash = encryptor.encrypt(password);
@@ -19,6 +20,9 @@ export function login() {
             $('#btn-logout').removeClass('hidden');
             $('#username-login').addClass('hidden');
             $('#password-login').addClass('hidden');
+            $('#profile-link').attr('href', '#/user/' + result.result.username);
+            $('#profile-link').text('Hello, ' + result.result.username);
+            $('#profile-link').removeClass('hidden');
             location.hash = '#/home';
             alert('Successfully logged in!');
         },
@@ -26,16 +30,15 @@ export function login() {
 }
 
 export function showRegisterForm() {
-    let $wrapper = $('#main-div');
+    const $wrapper = $('#main-div');
 
     $wrapper.css("display", "block");
 }
 
 export function cancelRegistration() {
-    let $wrapper = $('#main-div');
+    const $wrapper = $('#main-div');
 
     $wrapper.css("display", "none");
-
     location.hash = "#/home";
 }
 
@@ -56,20 +59,6 @@ export function signUp() {
         );
 }
 
-// export function register() {
-//     const username = $('#input-username').val();
-//     const password = $('#input-password').val();
-//     const passHash = encryptor.encrypt(password);
-
-//     data.register(username, passHash)
-//         .then(
-//             result => {
-//                 toastr.success(`User ${username} registered successfully`);
-//                 login()
-//             },
-//             errorMsg => toastr.error(errorMsg));
-// }
-
 export function logout() {
     localStorage.clear();
     $('#btn-login').removeClass('hidden');
@@ -79,4 +68,23 @@ export function logout() {
     $('#password-login').removeClass('hidden');
     alert('Successfully logged out');
     location.hash = '#/home';
+}
+
+export function addTrack(id, title, description, img) {
+    const headervalue = localStorage.getItem('authKey');
+    data.postTrack(headervalue, id, title, description, img)
+        .then(result => console.log(result),
+        errorMsg => alert(errorMsg.responseText));
+}
+
+export function removeTrack(id) {
+    const headervalue = localStorage.getItem('authKey');
+    data.deleteTrack(headervalue, id)
+        .then(result => alert(result),
+        errorMsg => alert(errorMsg.responseText));
+}
+
+export function loadPlaylist() {
+    const headervalue = localStorage.getItem('authKey');
+    return Promise.resolve(data.getTracks(headervalue));
 }
