@@ -54,5 +54,5 @@ $(document).ready(checkButtons());
 $(window).ready(function() {
     location.hash = "#/home";
 //     router.resolve();
-    router.updatePageLinks();
+//     router.updatePageLinks();
 });
