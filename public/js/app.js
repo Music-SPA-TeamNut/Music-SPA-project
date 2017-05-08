@@ -52,7 +52,7 @@ router
 
 // $(document).ready(checkButtons());
 $(window).ready(function() {
-    location.href = "#/home";
+    location.hash = "#/home";
     checkButtons()
     router.resolve();
     router.updatePageLinks();
