@@ -30,6 +30,8 @@ $('body').on('keypress', '#search-field', (e) => {
 
 router
     .on({
+        '': () => location.hash = "#/home",
+        'home': () => homeController.showHome(),
         'search/:query': (params) => searchController.searchTracks(params),
         'search/:query/:id': (params) => trackController.loadTrack(params),
         // 'user/:username': () => trackController.showProfile(),
@@ -42,17 +44,15 @@ router
         'cancel': () => userController.cancelRegistration(),
         'login': () => userController.login(),
         'logout': () => userController.logout(),
-        'home': () => homeController.showHome(),
-//         '*': () => location.hash = "#/home",
     })
     .resolve();
 
-// router
-//     .notFound(() => notFound());
+router
+    .notFound(() => notFound());
 
 // $(document).ready(checkButtons());
 $(window).ready(function() {
-    location.hash = "#/home";
+//     location.hash = "#/home";
     checkButtons()
     router.resolve();
     router.updatePageLinks();
