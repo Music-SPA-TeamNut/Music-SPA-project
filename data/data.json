@@ -66,7 +66,14 @@
       "passHash": "e3ea13dbb8d11137b17c4bdb3ba336609924709368a85b0363d1f2c8bee63627",
       "usernameLower": "didexe",
       "authKey": "undefinedJiL$K$&yRb&oyDvsnJ^fu%mCL)CT)aEMvzg^tUeD^+*=NmHfVwR",
-      "songList": [],
+      "songList": [
+        {
+          "id": "9qJKxaWb0_A",
+          "title": "Photek - ni ten ichi ryu",
+          "description": "My all-time fave. jungle/dnb video. For those of you who want more info - this is what Discogs has to say about it: Photek -- Ni - Ten - Ichi - Ryu Label: Science ...",
+          "img": "https://i.ytimg.com/vi/9qJKxaWb0_A/mqdefault.jpg"
+        }
+      ],
       "id": "edfe9529-09ec-4519-8600-3e3190528c72"
     },
     {

@@ -1,55 +1,48 @@
 import 'jquery';
 
 import userController from 'userController';
-import * as searchController from 'searchController';
+import searchController from 'searchController';
+import homeController from 'homeController';
+import trackController from 'trackController';
 import { checkButtons, notFound } from 'helpers';
-import * as trackController from 'trackController';
 
 const router = new Navigo(null, false);
 
 $('body').on('click', '#search-btn', () => {
-    if ($('#search-field').val() === '') {
+    let query = $('#search-field').val();
+    if ( query === '') {
         return;
     } else {
-        if (location.hash === '#/search') {
-            searchController.searchTracks()
-        } else {
-            router.navigate('search');
-            $('#search-field').val('')
+            router.navigate('search/' + query);
         }
-    }
 });
 
 $('body').on('keypress', '#search-field', (e) => {
     if (e.keyCode === 13) {
-        if ($('#search-field').val() === '') {
+        let query = $('#search-field').val();
+        if (query === '') {
             return;
         } else {
-            if (location.hash === '#/search') {
-                searchController.searchTracks()
-            } else {
-                router.navigate('search');
-                $('#search-field').val('')
+                router.navigate('search/' + query);
             }
-        }
     }
 })
 
 router
     .on({
-        'search': () => searchController.searchTracks(),
-        'search/:id': (params) => trackController.loadTrack(params),
-        'user/:username': () => trackController.showPlaylist(),
+        'search/:query': (params) => searchController.searchTracks(params),
+        'search/:query/:id': (params) => trackController.loadTrack(params),
+        // 'user/:username': () => trackController.showProfile(),
         'user/:username/playlist': () => trackController.showPlaylist(),
         'user/:username/playlist/:id': (params) => trackController.loadTrack(params),
-        'search/add-to-playlist/:id': (params) => trackController.addToPlaylist(params),
-        'user/remove-from-playlist/:id': (params) => trackController.removeFromPlaylist(params),
+        'search/:query/:id/add-to-playlist': (params) => trackController.addToPlaylist(params),
+        'user/:username/playlist/:id/remove-from-playlist': (params) => trackController.removeFromPlaylist(params),
         'registration': () => userController.showRegisterForm(),
         'signup': () => userController.signUp(),
         'cancel': () => userController.cancelRegistration(),
         'login': () => userController.login(),
         'logout': () => userController.logout(),
-        'home': ()  => $('#container').html(''),
+        'home': () => homeController.showHome(),
     })
     .resolve();
 

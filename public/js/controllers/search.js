@@ -1,15 +1,21 @@
-import { loadTemplate } from 'templates';
-import * as data from 'data';
+import templates from 'templates';
+import data from 'data';
 
 const $container = $('#container');
 
-export function searchTracks() {
-        const searchTerm = $('#search-field').val();
-        Promise.all([
-            data.search(searchTerm),
-            loadTemplate('search')
-        ])
-        .then(([items, template]) => {
-        $container.html(template(items));
-    })    
-};
+class Search {
+    searchTracks(params) {
+            const searchTerm = $('#search-field').val();
+            localStorage.setItem('searchQuery', searchTerm);
+            Promise.all([
+                data.search(searchTerm),
+                templates.loadTemplate('search')
+            ])
+            .then(([items, template]) => {
+            $container.html(template(items));
+        })    
+    };
+}
+
+const search = new Search();
+export default search;

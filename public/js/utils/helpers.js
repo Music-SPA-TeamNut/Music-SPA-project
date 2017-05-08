@@ -5,7 +5,7 @@ export function checkButtons() {
         $('#btn-logout').removeClass('hidden');
         $('#username-login').addClass('hidden');
         $('#password-login').addClass('hidden');
-        $('#profile-link').attr('href', '#/user/' + localStorage.getItem('username'));
+        $('#profile-link').attr('href', '#/user/' + localStorage.getItem('username') + '/playlist');
         $('#profile-link').text('Hello, ' + localStorage.getItem('username') + ' ');
         $('#profile-link').removeClass('hidden');
     }
@@ -20,4 +20,9 @@ export function notFound() {
 Handlebars.registerHelper('username', function() {
     const username = localStorage.getItem('username');
     return username;
+})
+
+Handlebars.registerHelper('query', function() {
+    const query = localStorage.getItem('searchQuery');
+    return query;
 })

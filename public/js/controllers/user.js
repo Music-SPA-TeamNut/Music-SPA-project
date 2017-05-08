@@ -1,5 +1,5 @@
-import * as data from 'data';
-import { loadTemplate } from 'templates';
+import data from 'data';
+// import templates from 'templates';
 import encryptor from 'encryptor';
 
 // const user = localStorage.getItem('username');
@@ -21,13 +21,14 @@ class UserController {
                 $('#btn-logout').removeClass('hidden');
                 $('#username-login').addClass('hidden');
                 $('#password-login').addClass('hidden');
-                $('#profile-link').attr('href', '#/user/' + result.result.username);
+                $('#profile-link').attr('href', '#/user/' + result.result.username + '/playlist');
                 $('#profile-link').text('Hello, ' + result.result.username);
                 $('#profile-link').removeClass('hidden');
                 location.hash = '#/home';
                 alert('Successfully logged in!');
             },
             errorMsg => alert(errorMsg.responseText));
+            location.hash = '#/home';
     }
 
     showRegisterForm() {

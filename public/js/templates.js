@@ -1,16 +1,22 @@
-import { get as getTemplate } from 'requester';
+import requester from 'requester';
 
 const cacheObj = {};
 
-export function loadTemplate(templateName) {
-  if(cacheObj.hasOwnProperty(templateName)) {
-    return Promise.resolve(cacheObj[templateName]);
-  }
+class Templates {
 
-  return getTemplate(`templates/${templateName}.handlebars`)
-    .then(template => {
-      const compiledTemplate = Handlebars.compile(template);
-      cacheObj[templateName] = compiledTemplate;
-      return Promise.resolve(compiledTemplate);
-    });
+  loadTemplate(templateName) {
+    if(cacheObj.hasOwnProperty(templateName)) {
+      return Promise.resolve(cacheObj[templateName]);
+    }
+
+    return requester.getRequest(`templates/${templateName}.handlebars`)
+      .then(template => {
+        const compiledTemplate = Handlebars.compile(template);
+        cacheObj[templateName] = compiledTemplate;
+        return Promise.resolve(compiledTemplate);
+      });
+  }
 }
+
+const templates = new Templates();
+export default templates;
