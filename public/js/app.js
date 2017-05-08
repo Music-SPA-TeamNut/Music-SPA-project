@@ -47,12 +47,13 @@ router
     })
     .resolve();
 
-router
-    .notFound(() => notFound());
+// router
+//     .notFound(() => notFound());
 
-$(document).ready(checkButtons(), location.href = "#/home");
+// $(document).ready(checkButtons());
 $(window).ready(function() {
-//     location.href = "#/home";
+    location.href = "#/home";
+    checkButtons()
     router.resolve();
     router.updatePageLinks();
 });
