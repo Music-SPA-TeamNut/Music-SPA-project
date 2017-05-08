@@ -47,12 +47,12 @@ router
     })
     .resolve();
 
-// router
-//     .notFound(() => notFound());
+router
+    .notFound(() => notFound());
 
 $(document).ready(checkButtons());
 $(window).ready(function() {
-    location.hash = "#/home";
-//     router.resolve();
-//     router.updatePageLinks();
+    location.href = "#/home";
+    router.resolve();
+    router.updatePageLinks();
 });
