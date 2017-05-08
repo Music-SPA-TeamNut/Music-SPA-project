@@ -51,8 +51,8 @@ router
     .notFound(() => notFound());
 
 $(document).ready(checkButtons());
-// $(window).ready(function() {
-//     location.hash = "#/home";
-    // router.resolve();
-    // router.updatePageLinks();
-// });
+$(window).ready(function() {
+    location.hash = "#/home";
+    router.resolve();
+    router.updatePageLinks();
+});
