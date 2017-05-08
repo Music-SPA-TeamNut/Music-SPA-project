@@ -8,12 +8,8 @@ export function login(username, passHash) {
     return requester.put('api/users/auth', body)
 }
 
-export function register(email, username, passHash) {
-    const body = {
-        email,
-        username,
-        passHash
-    };
+export function register(user) {
+    const body = user;
     return requester.post('api/users', body)
 }
 

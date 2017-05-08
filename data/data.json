@@ -121,6 +121,15 @@
         }
       ],
       "id": "099d137f-d166-4fe1-9d93-8d676a150b0d"
+    },
+    {
+      "email": "dero@mero.com",
+      "username": "Dero",
+      "passHash": "37b902a086b2a6a13707076472f7a6deb67cf2e0e44772d12d074d9209e317b7",
+      "usernameLower": "dero",
+      "authKey": "undefineduK!J$AqYWRXBlO*uf@dbtC#^n!bQf!*@MlOt(TWDDU-@_wYH*SU",
+      "songList": [],
+      "id": "cac702b2-be56-4ca5-817e-c234b4dcffb4"
     }
   ]
 }

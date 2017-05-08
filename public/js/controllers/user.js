@@ -2,7 +2,7 @@ import * as data from 'data';
 import { loadTemplate } from 'templates';
 import encryptor from 'encryptor';
 
-const user = localStorage.getItem('username');
+// const user = localStorage.getItem('username');
 
 class UserController {
     login() {
@@ -49,14 +49,15 @@ class UserController {
             // TODO: repeat password function
         const password = $('#password-value').val();
         const passHash = encryptor.encrypt(password);
+        const user = {email, username, passHash}
 
-        data.register(email, username, passHash)
+        data.register(user)
             .then(result => {
                 console.log(result);
-                login(username, passHash);
-                cancelRegistration();
+                this.cancelRegistration();
+                alert('Successfully registered!');
             },
-            // errorMsg => alert(errorMsg.responseText)
+            errorMsg => alert(errorMsg.responseText)
             );
     }
 

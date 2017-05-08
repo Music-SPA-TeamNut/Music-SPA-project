@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Music-SPA TESTS</title>
+        <link rel="stylesheet" href="../libs/mocha/mocha.css"/>
+    </head>
+
+    <body>
+        <div id="mocha"></div>
+        <!--Tests-->
+          <script src="../libs/mocha/mocha.js"></script>
+  <script src="../libs/chai/chai.js"></script>
+  <script src="../libs/sinon/pkg/sinon.js"></script>
+  <script src="../libs/sinon-chai/lib/sinon-chai.js"></script>
+
+        <!--Libs-->
+        <script src="../libs/jquery/dist/jquery.js"></script>
+        <script src="../libs/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../libs/navigo/lib/navigo.min.js"></script>
+        <script src="../libs/handlebars/dist/handlebars.js"></script>
+        <!--<script src="./libs/systemjs/dist/system.js"></script>-->
+        <!--<script src="./js/system-config.js"></script>-->
+        <script src="../js/data.js"></script>
+        <script src="../js/utils/requester.js"></script>
+        
+        <!--Unit Tests-->
+        <script>
+    mocha.setup('bdd');
+    const {expect} = chai;
+    // chai.use(sinonChai);
+  </script>
+
+  <script src="data-tests.js"></script>
+
+  <script>
+    mocha.run();
+  </script>
+    </body>
+</html>
