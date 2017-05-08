@@ -43,7 +43,7 @@ router
         'login': () => userController.login(),
         'logout': () => userController.logout(),
         'home': () => homeController.showHome(),
-        '': () => location.hash = "#/home";
+        '': () => location.hash = "#/home",
     })
     .resolve();
 
