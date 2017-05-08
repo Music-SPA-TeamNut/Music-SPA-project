@@ -47,8 +47,8 @@ router
     })
     .resolve();
 
-router
-    .notFound(() => notFound());
+// router
+//     .notFound(() => notFound());
 
 $(document).ready(checkButtons());
 $(window).ready(function() {
