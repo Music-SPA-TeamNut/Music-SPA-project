@@ -1,6 +1,6 @@
 import 'jquery';
 
-import * as userController from 'userController';
+import userController from 'userController';
 import * as searchController from 'searchController';
 import { checkButtons, notFound } from 'helpers';
 import * as trackController from 'trackController';
@@ -35,34 +35,30 @@ $('body').on('keypress', '#search-field', (e) => {
     }
 })
 
-
-
-
-$(document).ready(checkButtons());
-
 router
     .on({
-        'search': function() {searchController.searchTracks()},
+        'search': () => searchController.searchTracks(),
         'search/:id': (params) => trackController.loadTrack(params),
         'user/:username': () => trackController.showPlaylist(),
         'user/:username/playlist': () => trackController.showPlaylist(),
         'user/:username/playlist/:id': (params) => trackController.loadTrack(params),
         'search/add-to-playlist/:id': (params) => trackController.addToPlaylist(params),
         'user/remove-from-playlist/:id': (params) => trackController.removeFromPlaylist(params),
-        'registration': function() {userController.showRegisterForm()},
-        'signup': function() {userController.signUp()},
-        'cancel': function() {userController.cancelRegistration()},
-        'login': function() {userController.login()},
-        'logout': function() {userController.logout()},
-        'home': function() {$('#container').html('')},
+        'registration': () => userController.showRegisterForm(),
+        'signup': () => userController.signUp(),
+        'cancel': () => userController.cancelRegistration(),
+        'login': () => userController.login(),
+        'logout': () => userController.logout(),
+        'home': ()  => $('#container').html(''),
     })
     .resolve();
 
 router
     .notFound(() => notFound());
 
+$(document).ready(checkButtons());
 $(window).ready(function() {
-    location.href = "/#/home";
+    // location.href = "/#/home";
     // router.resolve();
     router.updatePageLinks();
 });

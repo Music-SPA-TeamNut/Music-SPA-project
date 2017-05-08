@@ -1,5 +1,3 @@
-
-
 export function checkButtons() {
     if(localStorage.getItem('btn-logout')) {
         $('#btn-login').addClass('hidden');
@@ -10,15 +8,6 @@ export function checkButtons() {
         $('#profile-link').attr('href', '#/user/' + localStorage.getItem('username'));
         $('#profile-link').text('Hello, ' + localStorage.getItem('username') + ' ');
         $('#profile-link').removeClass('hidden');
-    }
-}
-
-export function getId(id) {
-    localStorage.setItem('todoId', id)
-    if(document.selectElementById('#'+id).hasAttribute('checked')) {
-    localStorage.setItem('todoState', 'true')
-    } else {
-        localStorage.setItem('todoState', 'false')
     }
 }
 

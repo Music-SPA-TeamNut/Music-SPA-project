@@ -1,5 +1,5 @@
 import { loadTemplate } from 'templates';
-import { addTrack, removeTrack, loadPlaylist } from 'userController';
+import userController from 'userController';
 
 const $container = $('#container');
 
@@ -37,7 +37,7 @@ location.hash = '#/user/' + user + '/playlist'
 
 export function showPlaylist() {
     return Promise.all([
-        loadPlaylist(),
+        userController.loadPlaylist(),
         loadTemplate('playlist'),
     ])
     .then(([tracks, template]) => {
