@@ -43,7 +43,7 @@ router
         'login': () => userController.login(),
         'logout': () => userController.logout(),
         'home': () => homeController.showHome(),
-//         '': () => location.hash = "/#/home",
+        '': () => location.hash = "#/home",
     })
     .resolve();
 
@@ -52,7 +52,7 @@ router
 
 $(document).ready(checkButtons());
 $(window).ready(function() {
-    location.hash = "/#/home";
+//     location.hash = "/#/home";
     router.resolve();
     router.updatePageLinks();
 });
