@@ -43,16 +43,16 @@ router
         'login': () => userController.login(),
         'logout': () => userController.logout(),
         'home': () => homeController.showHome(),
-        '': () => location.hash = "#/home",
+//         '': () => location.hash = "#/home",
     })
     .resolve();
 
-$(document).ready(checkButtons());
-$(window).ready(function() {
-//     location.hash = "/#/home";
-    router.resolve();
-    router.updatePageLinks();
-});
-
 router
     .notFound(() => notFound());
+
+$(document).ready(checkButtons());
+$(window).ready(function() {
+    location.hash = "/#/home";
+//     router.resolve();
+    router.updatePageLinks();
+});
