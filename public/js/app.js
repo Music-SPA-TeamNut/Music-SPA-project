@@ -43,14 +43,14 @@ router
         'login': () => userController.login(),
         'logout': () => userController.logout(),
         'home': () => homeController.showHome(),
-        '*': () => location.hash = "#/home",
+//         '*': () => location.hash = "#/home",
     })
     .resolve();
 
 router
     .notFound(() => notFound());
 
-$(document).ready(checkButtons());
+$(document).ready(checkButtons(), location.href = "#/home");
 $(window).ready(function() {
 //     location.href = "#/home";
     router.resolve();
