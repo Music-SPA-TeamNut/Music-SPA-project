@@ -6,7 +6,7 @@ import homeController from 'homeController';
 import trackController from 'trackController';
 import { checkButtons, notFound } from 'helpers';
 
-const router = new Navigo(null, false);
+const router = new Navigo('#/home', false);
 
 $('body').on('click', '#search-btn', () => {
     let query = $('#search-field').val();
@@ -30,7 +30,7 @@ $('body').on('keypress', '#search-field', (e) => {
 
 router
     .on({
-        '': () => location.hash = "#/home",
+//         '': () => location.hash = "#/home",
         'home': () => homeController.showHome(),
         'search/:query': (params) => searchController.searchTracks(params),
         'search/:query/:id': (params) => trackController.loadTrack(params),
