@@ -22,7 +22,10 @@ class Tracks {
 
             userController.addTrack(id, title, description, img)
         } else {
-            alert('opaaa ... You need to be logged in to add songs to your playlist :)');
+            swal({  title: "Warning",
+                        text: 'opaaa ... You need to be logged in to add songs to your playlist :)',
+                        type: "warning" 
+                        });
             return;
         }
     }
