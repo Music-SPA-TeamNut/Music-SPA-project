@@ -1096,7 +1096,7 @@ textarea {
   font-size: inherit;
   line-height: inherit;
 }
-a {
+/*a {
   color: #337ab7;
   text-decoration: none;
 }
@@ -1108,7 +1108,7 @@ a:focus {
 a:focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
-}
+}*/
 figure {
   margin: 0;
 }
@@ -3056,7 +3056,7 @@ a.btn.disabled,
 fieldset[disabled] a.btn {
   pointer-events: none;
 }
-.btn-default {
+/*.btn-default {
   color: #333;
   background-color: #fff;
   border-color: #ccc;
@@ -3112,7 +3112,7 @@ fieldset[disabled] .btn-default.focus {
 .btn-default .badge {
   color: #fff;
   background-color: #333;
-}
+}*/
 .btn-primary {
   color: #fff;
   background-color: #337ab7;

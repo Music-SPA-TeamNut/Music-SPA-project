@@ -1,12 +1,11 @@
 {{#each items}}
-<div id="search-result">
-    <a href="#/search/{{query}}/{{id.videoId}}">
+<div class="search-result">
+    <a href="#/search/{{query}}/{{id.videoId}}" class="no-style">
         <h3 class="result-title">{{snippet.title}}</h3>
         <p class="result-description">{{snippet.description}}</p>
         <img class="result-image" src="{{snippet.thumbnails.medium.url}}">
     </a>
+    <br>
+    <a type="button"  class="btn btn-default btn-add" href="#/search/{{query}}/{{id.videoId}}/add-to-playlist">Add to playlist</a>
 </div>
-{{!--<form action="#/search/add-to-playlist/{{id.videoId}}" method="POST">--}}
-<button type="button" class="btn btn-add"><a type="button"  class="btn btn-sm btn-add" href="#/search/{{query}}/{{id.videoId}}/add-to-playlist">Add to playlist</a></button>
-{{!--</form>--}}
 {{/each}}
