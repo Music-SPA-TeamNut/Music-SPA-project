@@ -18,6 +18,7 @@ SystemJS.config({
         'encryptor': '/js/utils/encryptor.js',
         'jquery': '../libs/jquery/dist/jquery.js',
         'bootstrap': '../libs/bootstrap/dist/js/bootstrap.min.js',
+        'alerts': '../libs/sweetalert/dist/sweetalert.min.js'
         // 'handlebars': '../libs/handlebars/dist/',
         
     }
