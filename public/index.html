@@ -46,12 +46,18 @@
         <div class="jumbotron">
             <div class="container">
                 <h2 id="header">Welcome, below you can search for you favorite song or artist!</h2>
-                <div class="input-group">
+                <!--<div class="input-group">
                     <input id="search-field" type="text" class="form-control" placeholder="Search">
                     <div class="input-group-btn">
                         <button id="search-btn" type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-                    </div>
+                    </div>-->
+                <div class="field" id="searchform">
+                    <input type="text" id="search-field" placeholder="" />
+                    <button id="search-btn" type="button">Find!</button>
                 </div>
+                </div>
+                <!--SEARCH ENDS-->
+                <!--REGISTRSTRATION FORM BEGINS-->
                 <div id="main-div" class="background">
                     <form class="main-content">
                         <div class="container">
@@ -77,12 +83,13 @@
                                     <a class = "fix-btn" href="#/cancel">Cancel</a>
                                 </button>
                                 <button type="submit" class="signupbtn btn-imprt">
-                                    <a class = "fix-btn" href = "#/signup">SIGN UP</a>
+                                <a class = "fix-btn" href = "#/signup">SIGN UP</a>
                                 </button>
                             </div>
                         </div>
                     </form> 
                 </div>
+                <!--REGISTRATION FORM ENDS-->
             </div>
         </div>
         <!--CONTAINER-->
@@ -91,21 +98,21 @@
         <!--/CONTAINER-->
         <section id="credits" class="container">
             <div class="row">
-                <h1 id="headline">Developed by:</h1>
+                <h3 id="headline">Developed by:</h3>
                 <div class="col-md-4">
-                    <h2 class="centered-text">Daniel Petrov</h2>
+                    <h4 class="centered-text">Daniel Petrov</h4>
                     <hr>
                     <p><img src="images/pic1.jpg" class="img-circle" /></p>
                     <hr>
                 </div>
                 <div class="col-md-4">
-                    <h2 class="centered-text">Lambriana Yanakieva</h2>
+                    <h4 class="centered-text">Lambriana Yanakieva</h4>
                     <hr>
                     <p><img src="images/pic2.jpg" class="img-circle" /></p>
                     <hr>
                 </div>
                 <div class="col-md-4">
-                    <h2 class="centered-text">Nikolay Tsvetin</h2>
+                    <h4 class="centered-text">Nikolay Tsvetin</h4>
                     <hr>
                     <p><img src="images/pic3.jpg" class="img-circle" /></p>
                     <hr>
@@ -120,6 +127,6 @@
         <script src="./libs/navigo/lib/navigo.min.js"></script>
         <script src="./libs/handlebars/dist/handlebars.js"></script>
         <script src="./libs/systemjs/dist/system.js"></script>
-        <script src="./js/system-config.js"></script>
+        <script src="./js/app/system-config.js"></script>
     </body>
 </html>
