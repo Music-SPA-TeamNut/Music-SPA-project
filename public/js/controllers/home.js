@@ -1,8 +1,10 @@
 class HomeController {
     showHome() {
         $('#search-field').val('');
-        $('#container').html('')
-        }
+        $('#container').html('');
+        $('#username-login').val('');
+        $('#password-login').val('');
+    }
 }
 
 const homeController = new HomeController();
