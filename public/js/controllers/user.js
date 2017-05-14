@@ -1,5 +1,4 @@
 import data from 'data';
-// import templates from 'templates';
 import encryptor from 'encryptor';
 import swall from 'alerts';
 
@@ -10,6 +9,15 @@ class UserController {
         const username = $('#username-login').val();
         const password = $('#password-login').val();
         const passHash = encryptor.encrypt(password);
+
+        if(!username || !password) {
+            swal({  title: "Warning",
+                        text: 'Please enter username and password',
+                        type: "warning" 
+                    })
+                location.hash = '#/home'
+                return;
+            }
 
         data.login(username, passHash)
             .then((result) => {
@@ -32,44 +40,44 @@ class UserController {
                         type: "success",
                         timer: 2000 })
                     },
-            errorMsg => swal({  title: "Warning",
+            errorMsg => { swal({  title: "Warning",
                         text: errorMsg.responseText,
                         type: "warning" 
-                        }));
-            location.hash = '#/home';
+                    }),
+                    location.hash = '#/home';
+                })
     }
 
     showRegisterForm() {
-        const $wrapper = $('#main-div');
-
-        $wrapper.css("display", "block");
+        $.get('/templates/registration.html', function(data){
+            $('#form-background').html(data);
+        });
+        $('#form-background').css("display", "block");
     }
 
-    cancelRegistration() {
-        const $wrapper = $('#main-div');
-
-        $wrapper.css("display", "none");
+    hideRegisterForm() {
+        $('#form-background').css("display", "none");
+        $('#form-background').html('');
         location.hash = "#/home";
     }
 
     signUp() {
-        const email = $('#email-value').val();
+        const email = $("#email-value").val();
         const username = $("#username-value").val()
-            // TODO: repeat password function
-        const password = $('#password-value').val();
+        const password = $("#password-value2").val();
         const passHash = encryptor.encrypt(password);
         const user = {email, username, passHash}
-
+        this.hideRegisterForm();
+        
         data.register(user)
             .then(result => {
-                console.log(result);
-                this.cancelRegistration();
-                swal({  title: "Warning",
-                        text: errorMsg.responseText,
-                        type: "warning" 
-                        })
+                location.hash = '#/home';
+                swal({  title: "Success!",
+                        text: "You are registered!",
+                        type: "success",
+                        timer: 2000 });
             },
-            swal({  title: "Warning",
+            errorMsg => swal({  title: "Warning",
                         text: errorMsg.responseText,
                         type: "warning" 
                         })
@@ -95,9 +103,10 @@ class UserController {
     addTrack(id, title, description, img) {
         const headervalue = localStorage.getItem('authKey');
         data.postTrack(headervalue, id, title, description, img)
-            .then(result => swal({  title: "Just to let you know!",
+            .then(result => swal({  title: "Success!",
                         text: result,
                         type: "success",
+                        timer: 2000
                         }),
             errorMsg => swal({  title: "Warning",
                         text: errorMsg.responseText,

@@ -1,5 +1,5 @@
 {{#each items}}
-<div class="search-result">
+<div class="search-result" id="{{id.videoId}}" data-title='{{snippet.title}}' data-description='{{snippet.description}}' data-img='{{snippet.thumbnails.medium.url}}'>
     <a href="#/search/{{query}}/{{id.videoId}}" class="no-style">
         <h3 class="result-title">{{snippet.title}}</h3>
         <p class="result-description">{{snippet.description}}</p>

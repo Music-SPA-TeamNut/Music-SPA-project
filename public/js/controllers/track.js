@@ -5,27 +5,46 @@ const $container = $('#container');
 
 class Tracks {
     
-    loadTrack(params) {
-        return Promise.resolve(templates.loadTemplate('track'))
+    loadTrackFromSearch(params) {
+        const query = params.query
+        const id = params.id;
+        const element = document.getElementById(id);
+        const title = element.getAttribute('data-title');
+        const description = element.getAttribute('data-description');
+        const img = element.getAttribute('data-img');
+        const data = {
+            query,
+            id,
+            title,
+            description,
+            img
+        }
+        return Promise.resolve(templates.loadTemplate('addtrack'))
             .then(template => 
-            $container.html(template(params))
+            $container.html(template(data))
+    )};
+
+    loadTrackFromPlaylist(params) {
+        return Promise.resolve(templates.loadTemplate('removetrack'))
+            .then(template => {
+            $container.html(template(params));
+            }
     )};
 
     addToPlaylist(params) {
         if(localStorage.getItem('username')){
             const id = params.id;
-            const query = params.query
-            const $element = $('[href="#/search/'+ query + '/' + id + '"]');
-            const title = $element[0].children[0].innerText;
-            const description = $element[0].children[1].innerText;
-            const img = $element[0].children[2].currentSrc;
+            const element = document.getElementById(id);
+            const title = element.getAttribute('data-title');
+            const description = element.getAttribute('data-description');
+            const img = element.getAttribute('data-img');
 
             userController.addTrack(id, title, description, img)
         } else {
             swal({  title: "Warning",
                         text: 'opaaa ... You need to be logged in to add songs to your playlist :)',
                         type: "warning" 
-                        });
+                    });
             return;
         }
     }
@@ -50,44 +69,3 @@ class Tracks {
 }
 const tracks = new Tracks();
 export default tracks;
-
-// const $container = $('#container');
-
-// export function loadTrack(params) {
-//     return Promise.resolve(loadTemplate('track'))
-//         .then(template => 
-//         $container.html(template(params))
-// )};
-
-// export function addToPlaylist(params) {
-//     if(localStorage.getItem('username')){
-//         const id = params.id;
-//         const $element = $('[href="#/search/'+ id + '"]');
-//         const title = $element[0].children[0].innerText;
-//         const description = $element[0].children[1].innerText;
-//         const img = $element[0].children[2].currentSrc;
-
-//         addTrack(id, title, description, img)
-//     } else {
-//         alert('opaaa ... You need to be logged in to add songs to your playlist :)');
-//         return;
-//     }
-// }
-
-// export function removeFromPlaylist(params) {
-//     const id = params.id;
-//     const user = localStorage.getItem('username');
-// removeTrack(id);
-// location.hash = '#/user/' + user + '/playlist'
-// }
-
-// export function showPlaylist() {
-//     return Promise.all([
-//         userController.loadPlaylist(),
-//         loadTemplate('playlist'),
-//     ])
-//     .then(([tracks, template]) => {
-//         console.log(tracks);
-//         $('#container').html(template(tracks))
-//     })
-// }

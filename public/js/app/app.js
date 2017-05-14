@@ -4,7 +4,7 @@ import userController from 'userController';
 import searchController from 'searchController';
 import homeController from 'homeController';
 import trackController from 'trackController';
-import { checkButtons, notFound } from 'helpers';
+import * as helpers from 'helpers';
 
 const router = new Navigo(null, false);
 
@@ -27,19 +27,24 @@ $('body').on('keypress', '#search-field', (e) => {
             }
     }
 })
+$('body').on('blur', '#email-value', (e) => helpers.validateEmail())
+$('body').on('blur', '#username-value', (e) => helpers.validateUsername())
+$('body').on('keyup', '#password-value2', (e) => helpers.validatePassword())
+$('body').on('click', '#btn-signup', () => helpers.validateForm())
+$('body').on('focus', '.invalid', (e) => $(e.target).css('background-color', 'rgb(255,255,255)'));
 
 router
     .on({
         'search/:query': (params) => searchController.searchTracks(params),
-        'search/:query/:id': (params) => trackController.loadTrack(params),
+        'search/:query/:id': (params) => trackController.loadTrackFromSearch(params),
         // 'user/:username': () => trackController.showProfile(),
         'user/:username/playlist': () => trackController.showPlaylist(),
-        'user/:username/playlist/:id': (params) => trackController.loadTrack(params),
+        'user/:username/playlist/:id': (params) => trackController.loadTrackFromPlaylist(params),
         'search/:query/:id/add-to-playlist': (params) => trackController.addToPlaylist(params),
         'user/:username/playlist/:id/remove-from-playlist': (params) => trackController.removeFromPlaylist(params),
         'registration': () => userController.showRegisterForm(),
         'signup': () => userController.signUp(),
-        'cancel': () => userController.cancelRegistration(),
+        'cancel': () => userController.hideRegisterForm(),
         'login': () => userController.login(),
         'logout': () => userController.logout(),
         'home': () => homeController.showHome(),
@@ -47,12 +52,11 @@ router
     .resolve();
 
 router
-    .notFound(() => notFound());
+    .notFound(() => helpers.notFound());
 
-$(document).ready(checkButtons());
+$(document).ready(helpers.checkButtons());
 $(window).ready(function() {
     location.hash = "#/home";
     // router.resolve();
     router.updatePageLinks();
-//     router.updatePageLinks();
 });
