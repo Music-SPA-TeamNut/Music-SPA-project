@@ -75,13 +75,13 @@ div.col-md-4 p {
 .btn-remove {
     margin-top: 20px;
     color: white!important;
-    background: rgb(22, 160, 133);
+    background: #337ab7;
 }
 
 .btn-add {
     margin-top: 20px;
-    /*color: white!important;*/
-    background: rgb(22, 160, 133);
+    color: white!important;
+    background: #337ab7;
 }
 
 .result-image {
@@ -99,7 +99,6 @@ div.col-md-4 p {
 
 .playlist-item a:link {
     text-decoration: none!important;
-    color: #337ab7!important;
 }
 
 .playlist-item a:visited {
@@ -107,14 +106,44 @@ div.col-md-4 p {
     color: #337ab7;
 }
 
+.playlist-item .btn a:link {
+    text-decoration: none!important;
+    color: white;
+}
+
+.playlist-item .btn a:visited {
+    text-decoration: none!important;
+    color: white;
+}
+
+.playlist-item .btn:hover {
+    text-decoration: none!important;
+    background: #23527c;
+    color: white;
+}
+
 .search-result a:link {
     text-decoration: none!important;
-    color: #337ab7!important;
 }
 
 .search-result a:visited {
     text-decoration: none!important;
     color: #337ab7;
+}
+.search-result .btn a:link {
+    text-decoration: none!important;
+    color: white;
+}
+
+.search-result .btn a:visited {
+    text-decoration: none!important;
+    color: white;
+}
+
+.search-result .btn:hover {
+    text-decoration: none!important;
+    background: #23527c;
+    color: white;
 }
 
 #credits {

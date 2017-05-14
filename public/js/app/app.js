@@ -6,7 +6,7 @@ import homeController from 'homeController';
 import trackController from 'trackController';
 import * as helpers from 'helpers';
 
-const router = new Navigo(null, false);
+const router = new Navigo('#/', false);
 
 $('body').on('click', '#search-btn', () => {
     let query = $('#search-field').val();
