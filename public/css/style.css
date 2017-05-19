@@ -12,9 +12,6 @@ body {
 
 
 /* CONTENT BEGINS */
-#results {
-    padding: 25px;
-}
 #header {
     text-align: center;
     margin: 40px;
@@ -32,6 +29,8 @@ body {
 }
 div.col-md-4 p {
     text-align: center;
+    /*margin: 10px;*/
+    /*min-height: 200px;*/
 }
 /* CONTENT ENDS */
 
@@ -61,7 +60,7 @@ div.col-md-4 p {
     /*border: 1px lightgrey dotted;*/
     box-shadow: 1px 1px 5px grey;
     padding: 20px;
-    margin-top: 20px;
+    margin: 20px;
 }
 
 .playlist-item:hover {
@@ -69,7 +68,7 @@ div.col-md-4 p {
     /*border: 1px lightgrey dotted;*/
     /*box-shadow: 1px 1px 5px grey;*/
     padding: 20px;
-    margin-top: 20px;
+    margin: 20px;
 }
 
 .btn-remove {

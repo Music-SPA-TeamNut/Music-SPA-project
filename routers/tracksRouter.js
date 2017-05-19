@@ -32,17 +32,12 @@ module.exports = function(db) {
       if(user.songList.find(function(dbSong) {
         return dbSong.id === id;
       })) {
-        res.status(201)
+        res.status(200)
           .json('This song is already in your playlist');
           return;
       }
-      var song = {
-        id,
-        title: req.body.title,
-        description: req.body.description,
-        img: req.body.img
-      };
-      user.songList = user.songList || [];
+      var song = req.body;
+      // user.songList = user.songList || [];
 
       user.songList.push(song);
 

@@ -33,13 +33,14 @@ class Tracks {
 
     addToPlaylist(params) {
         if(localStorage.getItem('username')){
-            const id = params.id;
-            const element = document.getElementById(id);
-            const title = element.getAttribute('data-title');
-            const description = element.getAttribute('data-description');
-            const img = element.getAttribute('data-img');
+            const track = {}
+            track.id = params.id;
+            const element = document.getElementById(track.id);
+            track.title = element.getAttribute('data-title');
+            track.description = element.getAttribute('data-description');
+            track.img = element.getAttribute('data-img');
 
-            userController.addTrack(id, title, description, img)
+            userController.addTrack(track)
         } else {
             swal({  title: "Warning",
                         text: 'opaaa ... You need to be logged in to add songs to your playlist :)',
@@ -62,8 +63,23 @@ class Tracks {
             templates.loadTemplate('playlist'),
         ])
         .then(([tracks, template]) => {
-            console.log(tracks);
-            $('#container').html(template(tracks))
+            let fragment = document.createDocumentFragment()
+            let div = document.createElement('DIV');
+            div.innerHTML = template(tracks);
+            div = [...div.children];
+            let len = div.length
+            while(div.length > 0) {
+                let row = document.createElement('div')
+                row.className = 'row'
+                let col = div.splice(0,2)
+                row.append(col[0])
+                if(col[1]) {
+                    row.append(col[1])
+                }
+                len -= 2;
+                fragment.append(row)
+            }
+            $('#container').html(fragment)
         })
     }
 }

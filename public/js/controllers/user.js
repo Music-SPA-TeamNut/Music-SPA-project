@@ -100,9 +100,9 @@ class UserController {
         location.hash = '#/home';
     }
 
-    addTrack(id, title, description, img) {
+    addTrack(track) {
         const headervalue = localStorage.getItem('authKey');
-        data.postTrack(headervalue, id, title, description, img)
+        data.postTrack(headervalue, track)
             .then(result => swal({  title: "Success!",
                         text: result,
                         type: "success",

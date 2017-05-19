@@ -13,6 +13,7 @@ SystemJS.config({
         'homeController': '/js/controllers/home.js',
         'trackController': '/js/controllers/track.js',
         'helpers': '/js/utils/helpers.js',
+        'eventlisteners': '/js/utils/eventlisteners.js',
 
         'router': '/libs/navigo/lib/navigo.js',
         'encryptor': '/js/utils/encryptor.js',
