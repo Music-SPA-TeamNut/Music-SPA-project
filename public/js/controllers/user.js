@@ -8,7 +8,6 @@ class UserController {
     login() {
         const username = $('#username-login').val();
         const password = $('#password-login').val();
-        const passHash = encryptor.encrypt(password);
 
         if(!username || !password) {
             swal({  title: "Warning",
@@ -18,8 +17,10 @@ class UserController {
                 location.hash = '#/home'
                 return;
             }
+        const passHash = encryptor.encrypt(password);
+        const user = { username, passHash}
 
-        data.login(username, passHash)
+        data.login(user)
             .then((result) => {
                 console.log(result);
                 localStorage.setItem('authKey', result.result.authKey)
@@ -40,7 +41,7 @@ class UserController {
                         type: "success",
                         timer: 2000 })
                     },
-            errorMsg => { swal({  title: "Warning",
+                errorMsg => { swal({  title: "Warning",
                         text: errorMsg.responseText,
                         type: "warning" 
                     }),

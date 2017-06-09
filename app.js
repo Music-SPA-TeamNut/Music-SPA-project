@@ -1,29 +1,31 @@
-var express = require('express'),
-  bodyParser = require('body-parser'),
-  low = require('lowdb');
+const express = require('express'),
+    app = express(),
+    bodyParser = require('body-parser');
 
-var app = express(),
-  db = low('data/data.json');
 
-db._.mixin(require('underscore-db'));
+const db = require('./db')
+const url = 'mongodb://team-nut:Ebre5debre@ds131061.mlab.com:31061/music-app-db';
+
+// app.engine('jade', require('jade').__express)
+// app.set('view engine', 'jade')
 
 app.use(bodyParser.json());
 app.use(express.static('public'));
 app.use('/libs', express.static('node_modules'));
 
-var usersRouter = require('./routers/usersRouter')(db);
-var tracksRouter = require('./routers/tracksRouter')(db);
-var categoriesRouter = require('./routers/categoriesRouter')(db);
-
 require('./utils/authorized-user')(app, db);
+app.use('/api/users', require('./routers/usersRouter'));
+app.use('/api/tracks', require('./routers/tracksRouter'))
+// app.use('api/categories', require('./controllers/tracksRouter'))
 
-app.use('/api/users', usersRouter);
-app.use('/api/tracks', tracksRouter);
-app.use('/api/categories', categoriesRouter);
-
-var port = process.env.PORT || 3013;
-
-
-app.listen(port, function() {
-  console.log('Server is running at http://localhost:' + port);
-});
+// Connects to Mongo on start
+db.connect(url, function(err, db) {
+    if(err) {
+        console.log('Unable to connect to Mongo!')
+        process.exit(1);
+    } else {
+        app.listen(3013, function() {
+            console.log('Listening to port 3000 ...')
+        })
+    }
+})

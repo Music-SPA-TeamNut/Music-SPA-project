@@ -1,73 +1,66 @@
-var express = require('express');
-  // idGenerator = require('../utils/id-generator')();
+const express = require('express'),
+    router = express.Router();
 
-require('../polyfills/array');
+const db = require('../db');
 
-module.exports = function(db) {
-  var router = express.Router();
-
-  router.get('/', function(req, res) {
-      var user = req.user;
-      if (!user) {
+router.get('/', function(req, res) {
+    const user = req.user;
+    // console.log(user)
+    if(!user) {
         res.status(401)
-          .json('Not authorized User');
-        return;
-      }
-      var songs = user.songList;
-    
-      res.json({
+            .json('Not authorised user!');
+            return;
+    }
+    const songs = user.songList;
+    res.json({
         result: songs
-      });
     })
-    .post('/', function(req, res) {
-      var user = req.user;
-      if (!user) {
+})
+.post('/', function(req,res) {
+    const user = req.user;
+    if(!user) {
         res.status(401)
-          .json('You need to be logged in to add songs to your playlist :)');
+            .json('Not authorised user!')
         return;
-      }
+    }
+    const track = req.body;
+    const songs = user.songList;
 
-      var id = req.body.id;
-
-      if(user.songList.find(function(dbSong) {
-        return dbSong.id === id;
-      })) {
+    if(songs.find(function(dbSong){
+       return track.id === dbSong.id
+    })) {
         res.status(200)
-          .json('This song is already in your playlist');
-          return;
-      }
-      var song = req.body;
-      // user.songList = user.songList || [];
+            .json('Song already in your playlist')
+        return;
+    }
+    
+    const collection = db.get().collection('users');
+    collection.update({'username': user.username}, {$push:{'songList': track}})
 
-      user.songList.push(song);
-
-      res.status(201)
-        .json('Song added to your playlist');
-    })
-    .put('/:id', function(req, res) {
-      var user = req.user;
-      if (!user) {
+    res.status(201)
+        .json('Song added to your playlist')
+})
+.put('/:id', function(req, res) {
+    const user = req.user;
+    if(!user) {
         res.status(401)
-          .json('Not authorized User');
-        return;
-      }
-      var id = req.params.id;
-      var index = user.songList.findIndex(function(dbSong) {
-        return dbSong.id === id;
-      });
-      if (index < 0) {
+            .json('Not authorised user!')
+    }
+    const id = req.params.id;
+    const songs = user.songList;
+    const index = songs.find(dbSong => {
+        return dbSong.id = id})
+    if(index < 0) {
         res.status(404)
-          .json('Song with such id does not exist in DB');
+            .json('Song with such ID does not exist in your playlist')
         return;
-      }
+    }
 
-      user.songList.splice(index, 1)
+    const collection = db.get().collection('users')
+    collection.update({'username': user.username}, {$pull:{'songList': {'id': id}}},
+        () => res.status(200)
+        .json('Song removed from your playlist!'))
+    
+})
 
-      db.save();
-
-      res.json(
-        'Song removed from your playlist'
-      );
-    });
-  return router;
-};
+module.exports = router;

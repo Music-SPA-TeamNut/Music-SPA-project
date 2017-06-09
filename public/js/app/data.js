@@ -1,12 +1,9 @@
+// import requester from './requester';
 import requester from 'requester';
-
 class Data { 
 
-    login(username, passHash) {
-        const body = {
-            username,
-            passHash
-        };
+    login(user) {
+        const body = user;
         return requester.putRequest('api/users/auth', body)
     }
 
@@ -18,7 +15,6 @@ class Data {
     search(searchTerm) {
         const key = 'AIzaSyB7EMVgOaBihxou_GLXdcZcCWSWbVg8NJ0';
         const url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=' + searchTerm + '&type=video&videoCategoryId=10&key=' + key;
-
         return requester.getRequest(url) 
     }
 
@@ -27,7 +23,6 @@ class Data {
         const header = {
             'x-auth-key': headervalue
         }
-        
         return requester.postRequest('api/tracks', body, header)
     }
 
@@ -42,7 +37,6 @@ class Data {
         const header = {
             'x-auth-key': headervalue
         }
-
         return requester.getRequest('api/tracks', header);
     }
 }

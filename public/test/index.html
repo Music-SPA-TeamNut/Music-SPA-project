@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Music-SPA TESTS</title>
+        <link rel="stylesheet" href="../libs/mocha/mocha.css"/>
+    </head>
+
+    <body>
+        <div id="mocha"></div>
+        <!--Tests-->
+        <script src="../libs/mocha/mocha.js"></script>
+
+        <!--Libs-->
+        <script src="../libs/systemjs/dist/system.js"></script>
+        <script src="../js/app/system-config.js"></script>
+        
+        <!--Unit Tests-->
+        <script>
+            mocha.setup('bdd');
+        </script>
+
+        <script>
+            System.import('data');
+            System.import('tests');
+        </script>
+        <script>
+            mocha.run();
+        </script>
+    </body>
+</html>

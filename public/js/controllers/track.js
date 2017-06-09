@@ -53,8 +53,9 @@ class Tracks {
     removeFromPlaylist(params) {
         const id = params.id;
         const user = localStorage.getItem('username');
-    userController.removeTrack(id);
-    location.hash = '#/user/' + user + '/playlist'
+        userController.removeTrack(id);
+        setTimeout(() => location.hash = '#/user/' + user + '/playlist',
+                100)
     }
 
     showPlaylist() {

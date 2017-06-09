@@ -14,6 +14,12 @@ SystemJS.config({
         'trackController': '/js/controllers/track.js',
         'helpers': '/js/utils/helpers.js',
         'eventlisteners': '/js/utils/eventlisteners.js',
+        
+        'tests': '/test/dataTestsBrowser.js',
+        'mocha': '../libs/mocha/mocha.js',
+        'chai': '../libs/chai/chai.js',
+        'sinon-chai': '../libs/sinon-chai/lib/sinon-chai.js',
+        'sinon': '../libs/sinon/pkg/sinon.js',
 
         'router': '/libs/navigo/lib/navigo.js',
         'encryptor': '/js/utils/encryptor.js',
@@ -25,4 +31,7 @@ SystemJS.config({
     }
 })
 
-System.import('main');
+// System.import('main');
+// System.import ('tests');
+// System.import('data');
+// System.import('requester');
