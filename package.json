@@ -2,7 +2,7 @@
   "name": "music-app",
   "version": "1.0.0",
   "description": "##  App description",
-  "engines":{
+  "engines": {
     "node": "7.4.0",
     "npm": "5.0.1"
   },
