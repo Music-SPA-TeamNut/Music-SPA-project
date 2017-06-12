@@ -1,5 +1,6 @@
 // import requester from './requester';
 import requester from 'requester';
+
 class Data { 
 
     login(user) {
